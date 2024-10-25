@@ -47,3 +47,42 @@ pm2 list
 ```bash
 pm2 reload app_name/id
 ```
+
+- log any error check use pm2
+
+```bash
+pm2 log
+```
+
+```bash
+pm2 log app_name/id
+```
+
+- delete project
+
+```bash
+pm2 delete app_name/id/all
+```
+
+- stop project
+
+```bash
+pm2 stop app_name/id/all
+```
+
+- monito your sit
+
+```bash
+pm2 monit
+```
+
+## you can do add link for monitoring with pm2 premium
+
+- register acount pm2 monitor
+- create new project
+- link up your server
+
+```bash
+ pm2 link your link
+
+```
