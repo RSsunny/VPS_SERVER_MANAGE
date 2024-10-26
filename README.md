@@ -1,1 +1,1 @@
-### Managed vps server through complete coding using Ubuntu operating system
+### Managed vps server through complete coding using Ubuntu operating system with Nginx

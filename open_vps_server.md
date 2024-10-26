@@ -117,6 +117,8 @@ sudo ufw status verbose
 
 - [Go pm2 file](pm2_Command.md)
 
+### logout vps server
+
 ```bash
 exit
 ```
