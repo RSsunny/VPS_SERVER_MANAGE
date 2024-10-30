@@ -12,6 +12,54 @@ sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
 sudo ln -s /usr/share/phpmyadmin /var/www/project_folder_name/phpmyadmin
 ```
 
+### if forbidden error show your computer then follow the instructions
+
+- Check Permissions
+
+```bash
+sudo chown -R www-data:www-data /usr/share/phpmyadmin
+sudo chmod -R 755 /usr/share/phpmyadmin
+```
+
+- Verify Nginx Configuration
+
+```bash
+sudo nano /etc/nginx/sites-available/default
+```
+
+### past thes code here
+
+```bash
+location /phpmyadmin {
+    alias /usr/share/phpmyadmin;
+    index index.php index.html index.htm;
+}
+```
+
+- Restart Nginx
+
+```bash
+sudo systemctl restart nginx
+```
+
+- If you’re using PHP-FPM, make sure Nginx is configured to process .php files correctly. The configuration file should include something like
+
+```bash
+location ~ \.php$ {
+    include snippets/fastcgi-php.conf;
+    fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+}
+```
+
+- Restart Nginx
+
+```bash
+sudo systemctl restart nginx
+
+```
+
+## check again your apiaddress/phpmyadmin
+
 ### Note
 
 - php-mbstring: A module for managing non-ASCII strings with different encodings
